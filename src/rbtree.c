@@ -2,14 +2,24 @@
 
 #include <stdlib.h>
 
+#define SENTINEL nil_node
+
 rbtree *new_rbtree(void) {
   rbtree *p = (rbtree *)calloc(1, sizeof(rbtree));
+
+  struct node_t *sentinel = malloc(sizeof(struct node_t));
+  sentinel->color = RBTREE_BLACK;
+
+  p->nil = sentinel;
+  p->root = p->nil;
   // TODO: initialize struct if needed
   return p;
 }
 
 void delete_rbtree(rbtree *t) {
   // TODO: reclaim the tree nodes's memory
+  // 현재는 nil만 삭제 : 추후엔 전부 삭제해야 할듯
+  free(t->nil);
   free(t);
 }
 
