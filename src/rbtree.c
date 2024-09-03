@@ -1,7 +1,5 @@
 #include "rbtree.h"
-
 #include <stdlib.h>
-
 #define SENTINEL nil_node
 
 rbtree *new_rbtree(void) {
