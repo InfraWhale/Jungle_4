@@ -29,7 +29,4 @@ int rbtree_erase(rbtree *, node_t *);
 
 int rbtree_to_array(const rbtree *, key_t *, const size_t);
 
-void freeNode(node_t *, rbtree *);
-node_t *find_successor(rbtree *, node_t *);
-
 #endif  // _RBTREE_H_
