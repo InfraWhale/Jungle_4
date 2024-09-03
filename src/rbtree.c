@@ -5,7 +5,6 @@
 #define SENTINEL nil_node
 
 rbtree *new_rbtree(void) {
-  // TODO: initialize struct if needed
   rbtree *p = (rbtree *)calloc(1, sizeof(rbtree));
 
   node_t *sentinel = malloc(sizeof(node_t));
@@ -28,8 +27,6 @@ void freeNode(node_t *node, rbtree *t) {
 }
 
 void delete_rbtree(rbtree *t) {
-  // TODO: reclaim the tree nodes's memory
-  
   freeNode(t->root, t);
 
   free(t->nil);
@@ -137,7 +134,6 @@ void rbtree_insert_fixup(rbtree *t, node_t *ins) {
 }
 
 node_t *rbtree_insert(rbtree *t, const key_t key) {
-  // TODO: implement insert
   node_t *insnode = malloc(sizeof(node_t));
   node_t *nil = t->nil;
   insnode->key = key;
@@ -176,7 +172,6 @@ node_t *rbtree_insert(rbtree *t, const key_t key) {
 }
 
 node_t *rbtree_find(const rbtree *t, const key_t key) {
-  // TODO: implement find
   node_t *nil = t->nil;
   node_t *cur = t->root;
   while(cur != nil) {
@@ -192,7 +187,6 @@ node_t *rbtree_find(const rbtree *t, const key_t key) {
 }
 
 node_t *rbtree_min(const rbtree *t) {
-  // TODO: implement find
   node_t *nil = t->nil;
   node_t *cur = t->root;
   while(cur != nil) {
@@ -205,7 +199,6 @@ node_t *rbtree_min(const rbtree *t) {
 }
 
 node_t *rbtree_max(const rbtree *t) {
-  // TODO: implement find
   node_t *nil = t->nil;
   node_t *cur = t->root;
   while(cur != nil) {
@@ -293,7 +286,6 @@ void rbtree_delete_fixup(rbtree *t, node_t *del_pos) {
 }
 
 int rbtree_erase(rbtree *t, node_t *p) {
-  // TODO: implement erase
   node_t *nil = t->nil;
 
   color_t delete_color = p->color; // RB용
@@ -373,7 +365,6 @@ void rbtree_inorder(const rbtree *t, key_t *arr, const size_t n, node_t *cur, si
 }
 
 int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
-  // TODO: implement to_array
   size_t cnt = 0;
   rbtree_inorder(t, arr, n, t->root, &cnt);
 
